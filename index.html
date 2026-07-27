@@ -200,6 +200,30 @@ letter-spacing:1px;
 line-height:1.9;
 font-size:16px;
   }
+  .card{
+transition:.35s ease;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 45px rgba(0,0,0,.15);
+  }
+  .btn{
+background:linear-gradient(135deg,#ff7eb3,#ff4f8b);
+color:#fff;
+padding:14px 32px;
+border:none;
+border-radius:50px;
+font-weight:600;
+box-shadow:0 10px 25px rgba(255,79,139,.35);
+transition:.35s;
+cursor:pointer;
+}
+
+.btn:hover{
+transform:translateY(-4px) scale(1.05);
+box-shadow:0 18px 35px rgba(255,79,139,.45);
+  }
 </style>
 </head>
 
@@ -211,7 +235,7 @@ font-size:16px;
 
 <p>Happy Girlfriend's Day, My Favourite Person ✨</p>
 
-<button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
+<button class="btn" onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
 Tap To Open 💌
 </button>
 
