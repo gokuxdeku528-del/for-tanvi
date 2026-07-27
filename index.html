@@ -443,6 +443,32 @@ opacity:.25;
 font-size:17px;
 line-height:2;
    }
+ .btn{
+background:linear-gradient(135deg,#ff9ac5,#ff4f8b);
+border:2px solid rgba(255,255,255,.5);
+backdrop-filter:blur(10px);
+box-shadow:
+0 10px 30px rgba(255,79,139,.35),
+inset 0 0 15px rgba(255,255,255,.25);
+position:relative;
+overflow:hidden;
+}
+
+.btn::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:50%;
+height:100%;
+background:rgba(255,255,255,.35);
+transform:skewX(-25deg);
+transition:.5s;
+}
+
+.btn:hover::before{
+left:120%;
+ }
 </style>
 </head>
 
