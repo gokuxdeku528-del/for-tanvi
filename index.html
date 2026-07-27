@@ -151,6 +151,7 @@ box-shadow:0 20px 35px rgba(0,0,0,.18);
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:20px;
+    align-items:start;
 }
 
 .gallery img{
@@ -274,6 +275,61 @@ right:22px;
 font-size:18px;
 opacity:.35;
   }
+  .card{
+background:#fffdf8 !important;
+background-image:
+linear-gradient(rgba(255,192,203,.08) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,192,203,.08) 1px,transparent 1px);
+background-size:28px 28px;
+border:2px solid #ffe1ea;
+box-shadow:0 18px 40px rgba(0,0,0,.12);
+  }
+  .gallery img{
+position:relative;
+}
+
+.gallery div{
+position:relative;
+}
+
+.photo{
+position:relative;
+display:block;
+}
+
+.photo::before{
+content:"";
+position:absolute;
+top:-12px;
+left:50%;
+transform:translateX(-50%) rotate(-6deg);
+width:65px;
+height:22px;
+background:rgba(255,245,180,.8);
+border:1px solid rgba(0,0,0,.05);
+z-index:5;
+  }
+  .hero h1{
+font-size:68px;
+font-weight:700;
+letter-spacing:2px;
+text-shadow:0 8px 20px rgba(255,105,180,.25);
+animation:floatTitle 3s ease-in-out infinite;
+}
+
+.hero p{
+font-size:22px;
+opacity:.9;
+}
+
+@keyframes floatTitle{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+    }
 </style>
 </head>
 
@@ -328,15 +384,18 @@ Tap To Open 💌
 <h2>🤭myy Beautiful princesss</h2>
 
 <div class="gallery">
-
+<div class="photo">
 <img src="IMG-20260531-WA0019.jpg">
-
+</div>
+  <div class="photo">
 <img src="IMG-20260603-WA0013.jpg">
-
+  </div>
+  <div class="photo">
 <img src="IMG-20260620-WA0018.jpg">
-
+  </div>
+  <div class="photo">
 <img src="IMG-20260625-WA0027.jpg">
-
+  </div>
 </div>
 
 </div>
