@@ -671,9 +671,7 @@ transition:all .3s ease;
  </button>
 <div style="width:120px;height:3px;background:#ff8fb7;border-radius:20px;margin:18px auto 28px;"></div>
 <p>Happy Girlfriend's Day, My Favourite Person ✨</p>
-<button class="btn" onclick="changeTheme()">
-🎨 Change Theme
-</button>
+
 <button class="btn" onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
 Tap To Open 💌
 </button>
@@ -878,28 +876,7 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".fade").forEach(el => {
   observer.observe(el);
 });
- let dark = false;
-
-function changeTheme() {
-  dark = !dark;
-
-  const hero = document.querySelector(".hero");
-
-  if (dark) {
-    document.body.style.background = "linear-gradient(135deg,#1f1f2e,#0f172a)";
-
-    hero.querySelectorAll("h1,p").forEach(el=>{
-      el.style.color="#ffffff";
-    });
-
-  } else {
-    document.body.style.background = "";
-
-    hero.querySelectorAll("h1,p").forEach(el=>{
-      el.style.color="";
-    });
-  }
- }
+ 
 </script>
  
  <audio id="song" src="song.mp3"></audio>
