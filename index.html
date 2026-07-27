@@ -878,16 +878,25 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".fade").forEach(el => {
   observer.observe(el);
 });
- function changeTheme(){
-const body=document.body;
+ let dark = false;
 
-if(body.style.background=="#1e1e2f"){
-body.style.background="linear-gradient(135deg,#ffd6e7,#ffeef5)";
-body.style.color="#333";
-}else{
-body.style.background="#1e1e2f";
-body.style.color="white";
-}
+function changeTheme() {
+  dark = !dark;
+
+  if (dark) {
+    document.body.style.background = "linear-gradient(135deg,#1f1f2e,#0f172a)";
+
+    document.querySelectorAll("h1,h2,h3,p").forEach(el=>{
+      el.style.color="#ffffff";
+    });
+
+  } else {
+    document.body.style.background = "";
+
+    document.querySelectorAll("h1,h2,h3,p").forEach(el=>{
+      el.style.color="";
+    });
+  }
  }
 </script>
  
