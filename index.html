@@ -120,7 +120,33 @@ transform:translateY(110vh);
 }
 
 }
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
 
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.gallery img{
+border:8px solid white;
+padding:6px;
+background:white;
+transform:rotate(-2deg);
+transition:.35s;
+}
+
+.gallery img:nth-child(even){
+transform:rotate(2deg);
+}
+
+.gallery img:hover{
+transform:scale(1.06) rotate(0deg);
+box-shadow:0 20px 35px rgba(0,0,0,.18);
+  }
 </style>
 </head>
 
@@ -137,7 +163,7 @@ Tap To Open 💌
 </button>
 
   </div> 
-  <section class="section" id="letter">
+  <section class="section fade" id="letter">
 
 <div class="card">
 
@@ -165,7 +191,7 @@ Tap To Open 💌
 
 </section>
 
-<section class="section">
+<section class="section fade">
 
 <div class="card">
 
@@ -187,7 +213,7 @@ Tap To Open 💌
 
 </section>
 
-<section class="section">
+<section class="section fade">
 
 <div class="card">
 
@@ -207,7 +233,7 @@ Tap To Open 💌
 
 </div>
 
-  </section> <section class="section">
+  </section> <section class="section fade">
     
 <div class="card">
 
@@ -262,7 +288,21 @@ document.body.appendChild(heart);
 }
 
 </script>
+<script>
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{
+threshold:0.2
+});
 
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+</script>
 </body>
 
   </html>
