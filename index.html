@@ -883,17 +883,19 @@ document.querySelectorAll(".fade").forEach(el => {
 function changeTheme() {
   dark = !dark;
 
+  const hero = document.querySelector(".hero");
+
   if (dark) {
     document.body.style.background = "linear-gradient(135deg,#1f1f2e,#0f172a)";
 
-    document.querySelectorAll("h1,h2,h3,p").forEach(el=>{
+    hero.querySelectorAll("h1,p").forEach(el=>{
       el.style.color="#ffffff";
     });
 
   } else {
     document.body.style.background = "";
 
-    document.querySelectorAll("h1,h2,h3,p").forEach(el=>{
+    hero.querySelectorAll("h1,p").forEach(el=>{
       el.style.color="";
     });
   }
