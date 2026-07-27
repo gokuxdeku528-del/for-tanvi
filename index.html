@@ -505,6 +505,159 @@ height:60px;
 .gift-card.open .gift-back{
   display:block;
  }
+
+.section{
+backdrop-filter:blur(12px);
+background:rgba(255,255,255,0.12);
+border:1px solid rgba(255,255,255,0.2);
+box-shadow:0 15px 35px rgba(0,0,0,0.18);
+transition:0.4s ease;
+}
+
+.section:hover{
+transform:translateY(-5px);
+box-shadow:0 20px 45px rgba(255,105,180,0.25);
+}
+
+h1{
+background:linear-gradient(90deg,#ff6fa5,#ffd6e7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+img{
+transition:0.4s ease;
+border-radius:18px;
+}
+
+img:hover{
+transform:scale(1.05);
+box-shadow:0 15px 35px rgba(255,105,180,0.4);
+}
+
+.btn{
+box-shadow:0 0 20px rgba(255,105,180,0.45);
+transition:0.3s ease;
+}
+
+.btn:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 0 30px rgba(255,105,180,0.7);
+}
+
+body{
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.wave svg{
+filter:drop-shadow(0 5px 10px rgba(255,105,180,0.2));
+ /* Smooth page scrolling */
+html{
+scroll-behavior:smooth;
+}
+
+/* Text selection color */
+::selection{
+background:#ff7eb3;
+color:white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-track{
+background:#ffe6ef;
+}
+
+::-webkit-scrollbar-thumb{
+background:#ff7eb3;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:#ff4d88;
+}
+
+/* Card glow */
+.section:hover{
+border-color:#ff7eb3;
+}
+
+/* Image border */
+img{
+border:3px solid rgba(255,255,255,.4);
+}
+
+/* Button click animation */
+.btn:active{
+transform:scale(.96);
+}
+
+/* Letter spacing */
+h1,h2{
+letter-spacing:1px;
+}
+
+/* Better paragraph readability */
+p{
+line-height:1.8;
+}
+
+/* Fade-in animation */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.section{
+animation:fadeUp .8s ease;
+ }                           }
+ /* Floating animation for hero */
+.hero{
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+}
+
+/* Soft glow on headings */
+h1,h2{
+text-shadow:0 0 15px rgba(255,120,170,.35);
+}
+
+/* Rounded images */
+img{
+border-radius:20px;
+overflow:hidden;
+}
+
+/* Glass effect for gift card */
+.gift-card{
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.25);
+}
+
+/* Smooth transitions */
+*{
+transition:all .3s ease;
+                            }
 </style>
 </head>
 
