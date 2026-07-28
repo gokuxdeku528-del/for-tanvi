@@ -558,7 +558,7 @@ animation:bgMove 12s ease infinite;
 
 .wave svg{
 filter:drop-shadow(0 5px 10px rgba(255,105,180,0.2));
- /* Smooth page scrolling */
+}
 html{
 scroll-behavior:smooth;
 }
@@ -878,12 +878,27 @@ document.querySelectorAll(".fade").forEach(el => {
 });
  function playSong() {
   const song = document.getElementById("song");
-  song.currentTime = 35; // 35 second se start hoga
-  song.play();
+
+  song.pause();
+  song.currentTime = 35;
+
+  song.oncanplay = null;
+  song.onloadedmetadata = null;
+
+  if (song.readyState >= 2) {
+    song.play();
+  } else {
+    song.onloadedmetadata = () => {
+      song.currentTime = 35;
+      song.play();
+    };
+  }
  }
 </script>
  
- <audio id="song" src="SpotiDownloader.com - Something About You - Eyedress.mp3"></audio>
+<audio id="song" preload="auto">
+  <source src="SpotiDownloader.com - Something About You - Eyedress.mp3" type="audio/mpeg">
+</audio>
  
 </body>
 </html>
