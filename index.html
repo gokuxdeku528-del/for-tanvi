@@ -658,6 +658,162 @@ border:1px solid rgba(255,255,255,.25);
 *{
 transition:all .3s ease;
                             }
+ /* ===== Premium Background ===== */
+body{
+background:
+linear-gradient(-45deg,#ffe4ec,#ffd1e3,#fff5f8,#ffd6e7,#ffeef5);
+background-size:400% 400%;
+animation:aurora 15s ease infinite;
+}
+
+@keyframes aurora{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* ===== Glass Cards ===== */
+.card{
+border:1px solid rgba(255,255,255,.45);
+box-shadow:
+0 10px 35px rgba(255,105,180,.12),
+0 0 45px rgba(255,192,203,.18);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+position:relative;
+overflow:hidden;
+}
+
+/* Top Glow Line */
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:200%;
+height:3px;
+background:linear-gradient(90deg,transparent,#fff,transparent);
+animation:shine 5s linear infinite;
+}
+
+@keyframes shine{
+0%{left:-100%;}
+100%{left:100%;}
+}
+
+/* ===== Images ===== */
+.gallery img{
+outline:2px solid rgba(255,255,255,.6);
+outline-offset:6px;
+box-shadow:
+0 18px 35px rgba(0,0,0,.12),
+0 0 25px rgba(255,182,193,.25);
+}
+
+.gallery img:active{
+transform:scale(.98);
+}
+
+/* ===== Buttons ===== */
+.btn{
+background-size:200% 200%;
+animation:buttonGlow 4s linear infinite;
+}
+
+@keyframes buttonGlow{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
+}
+
+/* ===== Hero Glow ===== */
+.hero::after{
+content:"";
+position:absolute;
+width:320px;
+height:320px;
+background:radial-gradient(circle,rgba(255,180,210,.35),transparent 70%);
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:-1;
+filter:blur(20px);
+}
+
+/* ===== Floating Bubbles ===== */
+body::before,
+body::after{
+content:"";
+position:fixed;
+border-radius:50%;
+background:rgba(255,255,255,.18);
+filter:blur(8px);
+animation:floatBubble 18s ease-in-out infinite;
+pointer-events:none;
+z-index:-1;
+}
+
+body::before{
+width:160px;
+height:160px;
+top:10%;
+left:-60px;
+}
+
+body::after{
+width:220px;
+height:220px;
+bottom:8%;
+right:-90px;
+animation-delay:8s;
+}
+
+@keyframes floatBubble{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-40px);
+}
+}
+
+/* ===== Gift Card ===== */
+.gift-card{
+box-shadow:
+0 15px 35px rgba(255,80,140,.30),
+0 0 30px rgba(255,180,210,.35);
+}
+
+.gift-card:active{
+transform:scale(.97);
+}
+
+/* ===== Sections ===== */
+.section{
+border-radius:30px;
+}
+
+/* ===== Soft Divider ===== */
+.wave svg{
+filter:
+drop-shadow(0 6px 14px rgba(255,120,170,.18));
+}
+
+/* ===== Mobile Touch Effect ===== */
+button,
+img,
+.card,
+.gift-card{
+-webkit-tap-highlight-color:transparent;
+}
+
+/* ===== Smooth Animation ===== */
+*{
+transition:
+transform .35s ease,
+box-shadow .35s ease,
+background .35s ease,
+color .35s ease;
+ }
 </style>
 </head>
 
